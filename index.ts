@@ -128,7 +128,7 @@ function cli () {
   const logger: Logger = {
     info: (message) => logEmitter.emit('info', { message }),
     warn: (message) => logEmitter.emit('warn', { message }),
-    error: (message, { trace } = {}) => logEmitter.emit('info', { message, trace })
+    error: (message, { trace } = {}) => logEmitter.emit('error', { message, trace })
   }
 
   wiex({ command, commandArgs }, { outStream: process.stdout as WritableStream, errStream: process.stderr as WritableStream, logger }, wiexArgs)
