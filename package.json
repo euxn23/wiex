@@ -1,0 +1,19 @@
+{
+  "name": "wiex",
+  "version": "0.1.0-beta.1",
+  "main": "index.js",
+  "bin": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "repository": "git@github.com:euxn23/wiex.git",
+  "author": "euxn23 <euxn23@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "prepublish": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^15.0.1",
+    "typescript": "~4.2.4"
+  }
+}
