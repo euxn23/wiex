@@ -48,25 +48,28 @@ export async function wiex (
     logger.warn('$WIEX_PATH is not set, so wiex not expand $PATH')
   }
 
-  const commandNotExistErrorMessage = `Error: ${command} not found`
-  try {
-    const where = spawn(`where ${command}`)
-    where.on('close', (code) => {
+  const env = { ...process.env, PATH: `${PATH}:${WIEX_PATH}` }
+
+  const whichPromise = new Promise<void>((resolve) => {
+    const commandNotExistErrorMessage = `Error: ${command} not found`
+    const which = spawn('which', [command], { env })
+
+    which.on('close', (code) => {
       if (code === null || code > 0) {
         logger.error(commandNotExistErrorMessage)
         process.exit(1)
       }
+      resolve()
     })
-    where.on('error', () => {
+    which.on('error', () => {
       logger.error(commandNotExistErrorMessage)
       process.exit(1)
     })
-  } catch {
-    logger.error(commandNotExistErrorMessage)
-    process.exit(1)
-  }
+  })
 
-  const proc = spawn(command, commandArgs, { env: { ...process.env, PATH: `${PATH}:${WIEX_PATH}` } })
+  await whichPromise
+
+  const proc = spawn(command, commandArgs, { env })
 
   const { pid } = proc
 

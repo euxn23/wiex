@@ -1,6 +1,6 @@
 {
   "name": "wiex",
-  "version": "0.1.0-beta.3",
+  "version": "0.1.0-beta.4",
   "main": "index.js",
   "bin": "index.js",
   "files": [
