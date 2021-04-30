@@ -23,7 +23,7 @@ const { version } = require('./package.json')
 const helpText = `\
 wiex: Windows Invoke Expression for WSL2
 
-wiex invoke given windows .exe command by expanding $PATH with $WIEX_PATH
+wiex invokes given windows .exe command by expanding $PATH with $WIEX_PATH
 
 Usage:
 \twiex [wiex options] [.exe command] [.exe options]

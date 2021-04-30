@@ -1,6 +1,6 @@
 # wiex: Windows Invoke Expression for WSL2
 
-wiex invoke given windows .exe command by expanding $PATH with $WIEX_PATH
+wiex invokes given windows .exe command by expanding $PATH with $WIEX_PATH
 
 ## Motivation
  
@@ -23,7 +23,7 @@ cargo 1.51.0 (43b129a20 2021-03-16)
 
 wiex [wiex options] [.exe command] [.exe options]
 
-To see options, run `$ wiex help`
+To see options, run `$ wiex --help`
 
 ## Roadmap
 
