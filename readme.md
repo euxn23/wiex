@@ -5,7 +5,7 @@ wiex invokes given windows .exe command by expanding $PATH with $WIEX_PATH
 ## Motivation
  
 - If WSL2 `appendWindowsPath` interop option was enabled, PATH exploring failed with lack of access privileges for Windows system folders. This is reason for usability.
-- If Windows binary PATH is added to Linux $PATH, and same name command is in $PATH, it depends on $PATH order which command is called. This is reason for safety.
+- If Windows binary PATH is added to Linux $PATH, and same name command is in $PATH, it depends on $PATH order which command will be called. This is reason for safety.
 
 ## Example
 
